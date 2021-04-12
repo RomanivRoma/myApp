@@ -22,10 +22,11 @@
             </tr>
         @endforeach
         <tr>
-            <form action="/allPosts" method="POST">
+            <form method="POST" action="posts" accept-charset="UTF-8">
+                @csrf
                 <td><input type="text" id="name" name="name"></td>
                 <td><input type="text" id="theme" name="theme"></td>
-                <td><textarea type="text" id="post" name="post"> </textarea> <button>Post</button></td>
+                <td><textarea type="text" id="post" name="post"> </textarea> <button type="submit">Post</button></td>
             </form>
         </tr>
     </table>

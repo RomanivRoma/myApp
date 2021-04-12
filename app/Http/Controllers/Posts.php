@@ -21,23 +21,28 @@ class Posts extends Controller
     ];
     public function index($postId){
         if(!array_key_exists($postId, $this->users)){
-          return view('error', ['postId' => $postId]);
+          return view('posts/error', ['postId' => $postId]);
         }
         else{
-            return view('post', ['user' => $this->users[$postId], 'theme' => $this->theme[$postId], 'post' => $this->post[$postId]]);
+            return view('posts/post', ['user' => $this->users[$postId], 'theme' => $this->theme[$postId], 'post' => $this->post[$postId]]);
         }
 
     }
     public function showAll(){
-        return view('allPosts', ['users' => $this->users, 'theme' => $this->theme, 'post' => $this->post]);
+        return view('posts/allPosts', ['users' => $this->users, 'theme' => $this->theme, 'post' => $this->post]);
     }
-    public function save(){
-        array_push(request('name'));
-        array_push(request('theme'));
-        array_push(request('post'));
-        error_log(request('name'));
-        // request('theme');
-        // request('post');
-        redirect('/allPosts');
+    public function save(Request $request){
+        $a1 = $request->input('name');
+        $a2 = $request->input('theme');
+        $a3 = $request->input('post');
+        $this->users[] = $a1;
+        $this->theme[] = $a1;
+        $this->post[] = $a1;
+        // array_push($this->theme, $a2);
+        // array_push($this->post, $a3);
+        print_r($this->users);
+
+        // return redirect('/posts');
+        return view('posts/allPosts', ['users' => $this->users, 'theme' => $this->theme, 'post' => $this->post]);
     }
 }

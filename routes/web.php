@@ -20,11 +20,11 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/about', [About::class, 'index']);
-Route::get('/contact',  [Contact::class, 'index']);
+Route::get('about', [About::class, 'index']);
+Route::get('contact',  [Contact::class, 'index']);
 
-Route::get('/posts/{postId}', [Posts::class, 'index']);
-Route::get('/posts', [Posts::class, 'showAll']);
-Route::post('/posts', 'Posts@save');
+Route::get('posts/{postId}', [Posts::class, 'index']);
+Route::get('posts', [Posts::class, 'showAll']);
+Route::post('posts',  [Posts::class, 'save']);
 
-Route::get('/user/{name}', [User::class, 'hello']);
+Route::get('user/{name}', [User::class, 'hello']);
