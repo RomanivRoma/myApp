@@ -24,6 +24,7 @@ Route::get('about', [About::class, 'index']);
 Route::get('contact',  [Contact::class, 'index']);
 
 Route::get('posts/{postId}', [Posts::class, 'index']);
+Route::get('tags/{tag}', [Posts::class, 'sortTags']);
 Route::get('posts', [Posts::class, 'showAll']);
 Route::post('posts',  [Posts::class, 'save']);
 

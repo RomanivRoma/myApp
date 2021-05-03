@@ -8,7 +8,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    margin: 50px auto;
+    width: 90%;
+    /* height: 90vh; */
 }
 a{
     text-decoration: none;
@@ -62,5 +64,22 @@ table .cake{
 }
 table input, table textarea{
     width: 90%;
+}
+
+.post{
+    width: 80%;
+    text-align: center;
+}
+ul{
+    list-style: none;
+}
+.tags{
+    display: flex;
+    margin-top: 30px;
+    gap: 10px;
+}
+.tags-table{
+    padding: 0;
+    margin: 0 auto;
 }
 
